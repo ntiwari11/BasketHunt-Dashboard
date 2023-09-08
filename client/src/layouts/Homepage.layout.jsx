@@ -1,17 +1,16 @@
 import React from "react";
 
-
 const HomepageLayout =
   (Components) =>
   ({ ...props }) => {
     return (
       <>
-        {/* Navbar         */}
-        <p>This is navebar in Homapage layout(component will render below )</p>
-        <div >
+       
+        {/* <div className="relative w-full overflow-x-hidden" > */}
+        <div className="" >
           <Components {...props} />
         </div>
-        <p>This is footer in Homapage layout</p>
+        
       </>
     );
   };
