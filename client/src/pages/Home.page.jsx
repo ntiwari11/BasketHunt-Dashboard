@@ -8,9 +8,9 @@ const Home = () => {
  
   return (
     <>
-      <div >
-       this is component rendered in homePage Layout
-      </div>
+      <h1 className="text-3xl font-bold underline">
+     Tailwind setup complete  
+    </h1>
     </>
   );
 };
