@@ -1,0 +1,64 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.App_Farman {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App-logo_Farman {
+  height: 100%;
+  width: 100%;
+}
+
+.p1_Farman {
+  font-weight: 600;
+  font-size: 240%;
+  display: flex;
+  justify-content: center;
+}
+
+.p2_Farman {
+  display: flex;
+  justify-content: center;
+  font-size: 110%;
+  font-weight: 300;
+}
+
+.sec_Farman {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_Farman {
+  width: 189px;
+  height: 54px;
+  background-color: #ff7a3d;
+  border-radius: 30px;
+  font-size: 24px;
+  border: none;
+  text-decoration: none;
+  margin: 100px 0px 0px 0px;
+}
+
+.btn_Farman a {
+  text-decoration: none;
+  color: black;
+}
+
+.low_Farman {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
