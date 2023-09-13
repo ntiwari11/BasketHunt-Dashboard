@@ -18,10 +18,10 @@ const DashboardCards = () => {
     navigate("/appdashboard");
   };
   return (
-    <div onClick={openApp} className="body-middle cursor-pointer ">
-      <div className="card-grid">
+    <div onClick={openApp} className="body-middle  ">
+      <div className="card-grid ">
         {cardsData.map((card) => (
-          <div className="card" key={card.id}>
+          <div className="card cursor-pointer" key={card.id}>
             <h2>{card.title}</h2>
             <p>{card.content}</p>
           </div>

@@ -15,61 +15,61 @@ const NavbarAppList = () => {
     {
       appName: "App 3",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
+      active: true,
     },
     {
       appName: "App 4",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 5",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 6",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 7",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 8",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 9",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
     {
       appName: "App 10",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
+      active: false,
     },
-    {
-      appName: "App 11",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      appName: "App 12",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      appName: "App 13",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
+    // {
+    //   appName: "App 11",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
+    // {
+    //   appName: "App 12",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
+    // {
+    //   appName: "App 13",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
   ];
   return (
-    <ul className="flex justify-evenly  flex-wrap gap-2 ">
+    <ul className="hidden lg:flex justify-evenly  flex-wrap gap-2 ">
       {appLists.length > 10
         ? appLists.slice(0, 9).map((item, index) => (
             <>
