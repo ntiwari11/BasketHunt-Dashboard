@@ -45,7 +45,7 @@ const NavbarProfile = () => {
 
         {isProfileOpen && (
           <div className=" absolute shadow-lg py-3 -bottom-14 -right-0 w-36 z-20 flex flex-col gap-2 bg-white border border-gray-200">
-            <button onClick={""}>Sign Out</button>
+            <button onClick={() => {console.log("sign out Btn Click")}}>Sign Out</button>
           </div>
         )}
       </div>
