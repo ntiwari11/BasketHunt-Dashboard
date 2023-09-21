@@ -8,6 +8,29 @@ import NavbarAppList from "../AppList/NavbarAppList";
 const NavbarProfile = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const profileOptions = [
+    {
+      id: "1",
+      optionName: "option 1",
+    },
+    {
+      id: "2",
+      optionName: "option 2",
+    },
+    {
+      id: "3",
+      optionName: "option 3",
+    },
+    {
+      id: "4",
+      optionName: "option 4",
+    },
+    {
+      id: "5",
+      optionName: "option 5",
+    },
+  ];
   return (
     <>
       {/* hamburger */}
@@ -45,7 +68,7 @@ const NavbarProfile = () => {
 
         {isProfileOpen && (
           <div className=" absolute shadow-lg py-3 -bottom-14 -right-0 w-36 z-20 flex flex-col gap-2 bg-white border border-gray-200">
-            <button onClick={""}>Sign Out</button>
+            <button> Sign Out</button>
           </div>
         )}
       </div>

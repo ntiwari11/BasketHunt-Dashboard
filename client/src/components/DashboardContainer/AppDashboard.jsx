@@ -1,34 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Styles/AppDashboard.css";
-const AppDashboard = () => {
+const AppDashboard = ({ setAppTabs, appTabs }) => {
+  const removeTab = (tabValue) => {
+    setAppTabs((prev) => {
+      return prev.filter((item) => item.id !== tabValue);
+    });
+  };
+  console.log(appTabs);
   return (
     <div className="main">
-      <div className="part_Farman">
-        <div className="p1">
-          <div className="orange">
-            <p>App 1</p>
-            <button className="btn">X</button>
+      {appTabs.map((item, index) => {
+        return (
+          <div className="part_Farman" key={index}>
+            <ChatComponent
+              removeTab={removeTab}
+              tabValue={item}
+              tabsNo={appTabs.length}
+            />
           </div>
-        </div>
-      </div>
-      <div className="part_Farman">
-        <div className="p2">
-          <div className="orange">
-            <p className="p">App 2</p>
-            <button className="btn">X</button>
-          </div>
-        </div>
-      </div>
-      <div className="part_Farman">
-        <div className="p3">
-          <div className="orange">
-            <p>App 3</p>
-            <button className="btn">X</button>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };
 
 export default AppDashboard;
+
+const ChatComponent = ({ removeTab, tabValue, tabsNo }) => {
+  return (
+    <div className="p3">
+      <div className="orange" style={{ width: parseInt(1347 / tabsNo) }}>
+        <section className="flex justify-center flex-1">
+          <p>{tabValue.appName}</p>
+        </section>
+        <section>
+          <button className="btn" onClick={() => removeTab(tabValue.id)}>
+            X
+          </button>
+        </section>
+      </div>
+    </div>
+  );
+};

@@ -1,81 +1,102 @@
 import React from "react";
 
-const NavbarAppList = () => {
+const NavbarAppList = ({ setAppTabs, appTabs }) => {
   const appLists = [
     {
+      id: 1,
       appName: "App 1",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
     },
     {
+      id: 2,
       appName: "App 2",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
     },
     {
+      id: 3,
       appName: "App 3",
       appLogo: "https://via.placeholder.com/40",
-      active: true,
     },
     {
+      id: 4,
       appName: "App 4",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 5,
       appName: "App 5",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 6,
       appName: "App 6",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 7,
       appName: "App 7",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 8,
       appName: "App 8",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 9,
       appName: "App 9",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     {
+      id: 10,
       appName: "App 10",
       appLogo: "https://via.placeholder.com/40",
-      active: false,
     },
     // {
+    //   id:11,
     //   appName: "App 11",
     //   appLogo: "https://via.placeholder.com/40",
-    //   active: true,
     // },
     // {
+    //   id:12,
     //   appName: "App 12",
     //   appLogo: "https://via.placeholder.com/40",
-    //   active: true,
     // },
     // {
+    //   id:13,
     //   appName: "App 13",
     //   appLogo: "https://via.placeholder.com/40",
-    //   active: true,
     // },
   ];
+
+  const addTab = (item) => {
+    setAppTabs((prev) => {
+      const presentData = prev.find((data) => data.id === item.id);
+      if (!presentData) {
+        if (prev.length < 3) {
+          return [item, ...prev];
+        } else {
+          const data = [item, ...prev];
+          data.pop();
+          return data;
+        }
+      }
+      return prev;
+    });
+  };
+
   return (
     <ul className="hidden lg:flex justify-evenly  flex-wrap gap-2 ">
       {appLists.length > 10
         ? appLists.slice(0, 9).map((item, index) => (
-            <>
+            <div
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => addTab(item)}
+            >
               <li
                 className={`flex justify-between items-center  border-2 ml-3  rounded-full w-28 ${
-                  item.active === true
+                  appTabs.find((tab) => tab.id === item.id)
                     ? "border-appListColor-400"
                     : "border-gray-400"
                 }`}
@@ -85,17 +106,21 @@ const NavbarAppList = () => {
                   alt="app name"
                   className="w-8 h-8 rounded-full"
                 />
-                <a href="/" className="text-black pr-6  hover:text-gray-300">
+                <span className="text-black pr-6  hover:text-gray-300">
                   {item.appName}
-                </a>
+                </span>
               </li>
-            </>
+            </div>
           ))
         : appLists.map((item, index) => (
-            <>
+            <div
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => addTab(item)}
+            >
               <li
                 className={`flex justify-between items-center border-2  rounded-full w-28 ${
-                  item.active === true
+                  appTabs.find((tab) => tab.id === item.id)
                     ? "border-appListColor-400"
                     : "border-gray-400"
                 }`}
@@ -105,15 +130,15 @@ const NavbarAppList = () => {
                   alt="app name"
                   className="w-8 h-8 rounded-full"
                 />
-                <a href="/" className="text-black pr-6  hover:text-gray-300">
+                <span className="text-black pr-6  hover:text-gray-300">
                   {item.appName}
-                </a>
+                </span>
               </li>
-            </>
+            </div>
           ))}
 
       {appLists.length > 10 ? (
-        <>
+        <div>
           <li
             className={`flex justify-between items-center border-2  rounded-full w-28 border-gray-400`}
           >
@@ -126,7 +151,7 @@ const NavbarAppList = () => {
               view all
             </a>
           </li>
-        </>
+        </div>
       ) : (
         ""
       )}

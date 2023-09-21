@@ -13,13 +13,10 @@
   display: flex;
   background-color: #f8f8f8;
   height: 615px;
-  width: 449px;
   margin: 24px 0px 0px 24px;
   border-radius: 26px 26px 26px 26px;
 }
 
-.p1,
-.p2,
 .p3 {
   background: #e1e1e1;
   /* border-top: 31px; */
@@ -33,10 +30,9 @@
   background-color: #fba422;
   border-radius: 26px 26px 0px 0px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .orange p {
-  margin: 0px 0px 0px 135px;
   font-size: 24px;
   font-weight: 400;
 }
@@ -46,7 +42,7 @@
   border: none;
   font-size: 20px;
   margin: 8px 0px 0px 2px;
-  padding: 0px 0px 0px 132px;
+  /* padding: 0px 0px 0px 132px; */
 }
 
 .btn:hover {
