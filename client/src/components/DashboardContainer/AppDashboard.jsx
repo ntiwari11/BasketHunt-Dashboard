@@ -6,7 +6,7 @@ const AppDashboard = () => {
       <div className="part_Farman">
         <div className="p1">
           <div className="orange">
-            <p>Demo app</p>
+            <p>App 1</p>
             <button className="btn">X</button>
           </div>
         </div>
@@ -14,7 +14,7 @@ const AppDashboard = () => {
       <div className="part_Farman">
         <div className="p2">
           <div className="orange">
-            <p className="p">Demo app</p>
+            <p className="p">App 2</p>
             <button className="btn">X</button>
           </div>
         </div>
@@ -22,7 +22,7 @@ const AppDashboard = () => {
       <div className="part_Farman">
         <div className="p3">
           <div className="orange">
-            <p>Demo app</p>
+            <p>App 3</p>
             <button className="btn">X</button>
           </div>
         </div>
