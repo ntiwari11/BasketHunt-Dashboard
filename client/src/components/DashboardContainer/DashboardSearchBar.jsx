@@ -21,7 +21,9 @@ const DashboardSearchBar = ({ onSearch }) => {
             value={query}
             onChange={handleInputChange}
           />
-          <button onClick={handleSearch}>Search</button>
+          <button className="searchButton" onClick={handleSearch}>
+            Search
+          </button>
         </div>
       </div>
     </>

@@ -1,54 +1,54 @@
 import React from "react";
 
-const NavbarAppList = ({setAppTabs,appTabs}) => {
+const NavbarAppList = ({ setAppTabs, appTabs }) => {
   const appLists = [
     {
-      id:1,
+      id: 1,
       appName: "App 1",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:2,
+      id: 2,
       appName: "App 2",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:3,
+      id: 3,
       appName: "App 3",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:4,
+      id: 4,
       appName: "App 4",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:5,
+      id: 5,
       appName: "App 5",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:6,
+      id: 6,
       appName: "App 6",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:7,
+      id: 7,
       appName: "App 7",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:8,
+      id: 8,
       appName: "App 8",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:9,
+      id: 9,
       appName: "App 9",
       appLogo: "https://via.placeholder.com/40",
     },
     {
-      id:10,
+      id: 10,
       appName: "App 10",
       appLogo: "https://via.placeholder.com/40",
     },
@@ -71,29 +71,29 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
 
   const addTab = (item) => {
     setAppTabs((prev) => {
-      const presentData = prev.find((data) => data.id === item.id)
-      if (!presentData)
-      {
-        if (prev.length < 3 )
-        {
+      const presentData = prev.find((data) => data.id === item.id);
+      if (!presentData) {
+        if (prev.length < 3) {
           return [item, ...prev];
-        }
-        else
-        {
-          const data = [item, ...prev,];
+        } else {
+          const data = [item, ...prev];
           data.pop();
           return data;
         }
       }
-      return prev
-    })
-  }
+      return prev;
+    });
+  };
 
   return (
     <ul className="hidden lg:flex justify-start flex-nowrap overflow-x-scroll gap-2 removeScroll" >
       {appLists.length > 10
         ? appLists.slice(0, 9).map((item, index) => (
-            <div className="hover:cursor-pointer" key={index} onClick={()=>addTab(item)}>
+            <div
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => addTab(item)}
+            >
               <li
                 className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${
                   appTabs.find((tab)=>tab.id===item.id)
@@ -113,7 +113,11 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
             </div>
           ))
         : appLists.map((item, index) => (
-            <div className="hover:cursor-pointer" key={index} onClick={()=>addTab(item)}>
+            <div
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => addTab(item)}
+            >
               <li
                 className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
                   appTabs.find((tab)=>tab.id===item.id)
@@ -134,7 +138,7 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
           ))}
 
       {appLists.length > 10 ? (
-        <div >
+        <div>
           <li
             className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 border-gray-400`}
           >

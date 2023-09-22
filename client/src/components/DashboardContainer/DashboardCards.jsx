@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Styles/DashboardCards.css";
 import { useNavigate } from "react-router-dom";
 const DashboardCards = () => {
@@ -17,11 +17,12 @@ const DashboardCards = () => {
   const openApp = () => {
     navigate("/appdashboard");
   };
+
   return (
-    <div onClick={openApp} className="body-middle  ">
+    <div className="body-middle  ">
       <div className="card-grid ">
         {cardsData.map((card) => (
-          <div className="card cursor-pointer" key={card.id}>
+          <div onClick={openApp} className="card cursor-pointer" key={card.id}>
             <h2>{card.title}</h2>
             <p>{card.content}</p>
           </div>
