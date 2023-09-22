@@ -90,12 +90,12 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
   }
 
   return (
-    <ul className="hidden lg:flex justify-evenly  flex-wrap gap-2 ">
+    <ul className="hidden lg:flex justify-start flex-nowrap overflow-x-scroll gap-2 removeScroll" >
       {appLists.length > 10
         ? appLists.slice(0, 9).map((item, index) => (
             <div className="hover:cursor-pointer" key={index} onClick={()=>addTab(item)}>
               <li
-                className={`flex justify-between items-center  border-2 ml-3  rounded-full w-28 ${
+                className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${
                   appTabs.find((tab)=>tab.id===item.id)
                     ? "border-appListColor-400"
                     : "border-gray-400"
@@ -106,7 +106,7 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
                   alt="app name"
                   className="w-8 h-8 rounded-full"
                 />
-                <span className="text-black pr-6  hover:text-gray-300">
+                <span className="text-black hover:text-gray-300">
                   {item.appName}
                 </span>
               </li>
@@ -115,7 +115,7 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
         : appLists.map((item, index) => (
             <div className="hover:cursor-pointer" key={index} onClick={()=>addTab(item)}>
               <li
-                className={`flex justify-between items-center border-2  rounded-full w-28 ${
+                className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
                   appTabs.find((tab)=>tab.id===item.id)
                     ? "border-appListColor-400"
                     : "border-gray-400"
@@ -126,7 +126,7 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
                   alt="app name"
                   className="w-8 h-8 rounded-full"
                 />
-                <span className="text-black pr-6  hover:text-gray-300">
+                <span className="text-black hover:text-gray-300">
                   {item.appName}
                 </span>
               </li>
@@ -136,14 +136,14 @@ const NavbarAppList = ({setAppTabs,appTabs}) => {
       {appLists.length > 10 ? (
         <div >
           <li
-            className={`flex justify-between items-center border-2  rounded-full w-28 border-gray-400`}
+            className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 border-gray-400`}
           >
             <img
               src="https://via.placeholder.com/40"
               alt="app name"
-              className="w-8 h-8 rounded-full"
+              className="w-8 h-8 rounded-full "
             />
-            <a href="/" className="text-black pr-6  hover:text-gray-300">
+            <a href="/" className="text-black hover:text-gray-300 whitespace-nowrap">
               view all
             </a>
           </li>
