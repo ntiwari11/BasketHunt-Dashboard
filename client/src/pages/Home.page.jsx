@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 
 // Layout
 import HomeLayout from "../layouts/Homepage.layout";
@@ -35,12 +35,26 @@ const Home = () => {
     }
   ]
   const [appTabs, setAppTabs] = useState(tempTab) 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const updateWindowDimensions = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', updateWindowDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateWindowDimensions);
+    };
+  }, []);
+
   return (
     <>
       {user?.token ? (
         <>
-          <Navbar setAppTabs={setAppTabs} appTabs={appTabs}/>
-          <AppDashboard setAppTabs={setAppTabs} appTabs={appTabs} />
+          <Navbar setAppTabs={setAppTabs} appTabs={appTabs} windowWidth={windowWidth}/>
+          <AppDashboard setAppTabs={setAppTabs} appTabs={appTabs} windowWidth={windowWidth} />
         </>
       ) : (
         <h1> Un-Authorize Access. Please Login .</h1>
