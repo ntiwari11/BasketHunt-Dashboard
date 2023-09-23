@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavbarAppList = ({ setAppTabs, appTabs }) => {
+const NavbarAppList = ({ setAppTabs, appTabs, windowWidth }) => {
   const appLists = [
     {
       id: 1,
@@ -73,69 +73,74 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
     setAppTabs((prev) => {
       const presentData = prev.find((data) => data.id === item.id);
       if (!presentData) {
-        if (prev.length < 3) {
+        if (windowWidth >= 1280) {
+
+          if (prev.length === 3) prev.pop();
           return [item, ...prev];
-        } else {
-          const data = [item, ...prev];
-          data.pop();
-          return data;
         }
+        else if (windowWidth < 640) {
+          return [item];
+        }
+        else if (windowWidth < 1280) {
+          
+          if (prev.length===2) prev.pop()
+          return [item, ...prev];
+        }
+        return prev;
       }
       return prev;
     });
   };
 
   return (
-    <ul className="hidden lg:flex justify-start flex-nowrap overflow-x-scroll gap-2 removeScroll" >
+    <ul className="flex justify-start flex-nowrap overflow-x-scroll gap-2 removeScroll" >
       {appLists.length > 10
         ? appLists.slice(0, 9).map((item, index) => (
-            <div
-              className="hover:cursor-pointer"
-              key={index}
-              onClick={() => addTab(item)}
-            >
-              <li
-                className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${
-                  appTabs.find((tab)=>tab.id===item.id)
-                    ? "border-appListColor-400"
-                    : "border-gray-400"
+          <div
+            className="hover:cursor-pointer"
+            key={index}
+            onClick={() => addTab(item)}
+          >
+            <li
+              className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${appTabs.find((tab) => tab.id === item.id)
+                ? "border-appListColor-400"
+                : "border-gray-400"
                 }`}
-              >
-                <img
-                  src={item.appLogo}
-                  alt="app name"
-                  className="w-8 h-8 rounded-full"
-                />
-                <span className="text-black hover:text-gray-300">
-                  {item.appName}
-                </span>
-              </li>
-            </div>
-          ))
+            >
+              <img
+                src={item.appLogo}
+                alt="app name"
+                className="w-8 h-8 rounded-full"
+              />
+              <span className="text-black hover:text-gray-300">
+                {item.appName}
+              </span>
+            </li>
+          </div>
+        ))
         : appLists.map((item, index) => (
-            <div
-              className="hover:cursor-pointer"
-              key={index}
-              onClick={() => addTab(item)}
-            >
-              <li
-                className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
-                  appTabs.find((tab)=>tab.id===item.id)
-                    ? "border-appListColor-400"
-                    : "border-gray-400"
+          <div
+            className="hover:cursor-pointer"
+            key={index}
+            onClick={() => addTab(item)}
+          >
+            <li
+              className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${appTabs.find((tab) => tab.id === item.id)
+                ? "border-appListColor-400"
+                : "border-gray-400"
                 }`}
-              >
-                <img
-                  src={item.appLogo}
-                  alt="app name"
-                  className="w-8 h-8 rounded-full"
-                />
-                <span className="text-black hover:text-gray-300">
-                  {item.appName}
-                </span>
-              </li>
-            </div>
-          ))}
+            >
+              <img
+                src={item.appLogo}
+                alt="app name"
+                className="w-8 h-8 rounded-full"
+              />
+              <span className="text-black hover:text-gray-300">
+                {item.appName}
+              </span>
+            </li>
+          </div>
+        ))}
 
       {appLists.length > 10 ? (
         <div>
