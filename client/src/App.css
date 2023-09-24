@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+}
+body {
+  background: #f8f8f8;
+}
+h1,
+h4,
+p,
+a {
+  color: orangered;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+.btn {
+  padding: 12px 31px;
+  font-size: 1rem;
+  text-decoration: uppercase;
+  background: black;
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.btn-light {
+  background: transparent;
+  color: azure;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0);
+  transition: 0.4s;
+}
+
+.removeScroll::-webkit-scrollbar {
+  background-color: rgba(204,204,204,0);
+  height: 5px;
+}
+.removeScroll::-webkit-scrollbar-thumb {
+  background-color: rgba(237,201,161,0);
+  height: 5px;
+}
+
+.removeScroll::-webkit-scrollbar:hover {
+  height: 15px;
+  background-color: rgba(204,204,204,0.7);
+  cursor: pointer; 
+}
+.removeScroll::-webkit-scrollbar-thumb:hover {
+  height: 15px;
+  background-color: rgba(188, 112, 71, 0.3);
+
+}

@@ -1,0 +1,54 @@
+html {
+  font-size: 16px;
+}
+
+.body-middle {
+  margin-top: 0.875rem;
+  padding: 5rem 7.75rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.1875rem 0.5rem;
+}
+
+.card {
+  padding: 2.8125rem;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.75rem;
+  border-color: #ff7a3d;
+  background-color: rgb(250, 250, 250);
+  width: 17.125rem;
+  height: 12.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: border-color 0.3s ease-in-out;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 0.3125rem 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card p {
+  margin-top: 0;
+}
+
+.img {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.imgc {
+  height: 5rem;
+  width: 5rem;
+}

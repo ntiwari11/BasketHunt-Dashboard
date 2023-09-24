@@ -1,0 +1,17 @@
+.nav-bar_menu {
+  display: flex;
+}
+.nav-bar_menu li {
+  padding: 0 1rem;
+}
+.nav-bar_menu li a {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #dcd3d3;
+}

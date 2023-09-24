@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.part_Farman {
+  display: flex;
+  background-color: #f8f8f8;
+  height: 643px;
+  margin: 2px 0px 0px 2px;
+  border-radius: 26px 26px 26px 26px;
+}
+
+.p3 {
+  background: #e1e1e1;
+  /* border-top: 31px; */
+  border-radius: 30px 30px 20px 20px;
+}
+
+.orange {
+  display: flex;
+  width: 449px;
+  height: 84px;
+  background-color: #fba422;
+  border-radius: 26px 26px 0px 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+.orange p {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: #fba422;
+  border: none;
+  font-size: 20px;
+  margin: 8px 0px 0px 2px;
+  /* padding: 0px 0px 0px 132px; */
+}
+
+.btn:hover {
+  color: #f8f8f8;
+}
