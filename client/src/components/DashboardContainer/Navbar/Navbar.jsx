@@ -6,9 +6,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
 import { useLocation } from "react-router-dom";
-const Navbar = ({ setAppTabs, appTabs }) => {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
+const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const location = useLocation();
   return (
     <nav className="bg-white-500 border-b-4 border-navbarbottomline-200 p-4 ">
@@ -39,7 +39,11 @@ const Navbar = ({ setAppTabs, appTabs }) => {
         {location.pathname === "/dashboard" ? (
           ""
         ) : (
-          <NavbarAppList setAppTabs={setAppTabs} appTabs={appTabs} />
+          <NavbarAppList
+            setAppTabs={setAppTabs}
+            appTabs={appTabs}
+            windowWidth={windowWidth}
+          />
         )}
         {/* Profile */}
         <NavbarProfile />

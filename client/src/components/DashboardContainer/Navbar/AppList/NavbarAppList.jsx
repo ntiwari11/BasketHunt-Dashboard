@@ -2,15 +2,7 @@ import React from "react";
 // Import Swiper React components
 // import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/navigation";
-
-// import "./styles.css";
-
-// import required modules
-// import { Navigation } from "swiper/modules";
-const NavbarAppList = ({ setAppTabs, appTabs }) => {
+const NavbarAppList = ({ setAppTabs, appTabs, windowWidth }) => {
   const appLists = [
     {
       id: 1,
@@ -83,13 +75,16 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
     setAppTabs((prev) => {
       const presentData = prev.find((data) => data.id === item.id);
       if (!presentData) {
-        if (prev.length < 3) {
+        if (windowWidth >= 1280) {
+          if (prev.length === 3) prev.pop();
           return [item, ...prev];
-        } else {
-          const data = [item, ...prev];
-          data.pop();
-          return data;
+        } else if (windowWidth < 640) {
+          return [item];
+        } else if (windowWidth < 1280) {
+          if (prev.length === 2) prev.pop();
+          return [item, ...prev];
         }
+        return prev;
       }
       return prev;
     });
@@ -112,7 +107,7 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
             onClick={() => addTab(item)}
           >
             <li
-              className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
+              className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${
                 appTabs.find((tab) => tab.id === item.id)
                   ? "border-appListColor-400"
                   : "border-gray-400"
