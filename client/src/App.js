@@ -7,6 +7,9 @@ import AdminLogin from "./components/LoginComponent/AdminLogin";
 import UserLogin from "./components/LoginComponent/UserLogin";
 import Dasboard from "./components/DashboardContainer/Dasboard";
 import Login from "./components/LoginComponent/Login";
+import { register } from "swiper/element/bundle";
+register();
+
 function App() {
   return (
     <Routes>

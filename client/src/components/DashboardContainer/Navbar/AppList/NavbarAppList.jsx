@@ -1,5 +1,15 @@
 import React from "react";
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+// import "swiper/css";
+// import "swiper/css/navigation";
+
+// import "./styles.css";
+
+// import required modules
+// import { Navigation } from "swiper/modules";
 const NavbarAppList = ({ setAppTabs, appTabs }) => {
   const appLists = [
     {
@@ -52,21 +62,21 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
       appName: "App 10",
       appLogo: "https://via.placeholder.com/40",
     },
-    // {
-    //   id:11,
-    //   appName: "App 11",
-    //   appLogo: "https://via.placeholder.com/40",
-    // },
-    // {
-    //   id:12,
-    //   appName: "App 12",
-    //   appLogo: "https://via.placeholder.com/40",
-    // },
-    // {
-    //   id:13,
-    //   appName: "App 13",
-    //   appLogo: "https://via.placeholder.com/40",
-    // },
+    {
+      id: 11,
+      appName: "App 11",
+      appLogo: "https://via.placeholder.com/40",
+    },
+    {
+      id: 12,
+      appName: "App 12",
+      appLogo: "https://via.placeholder.com/40",
+    },
+    {
+      id: 13,
+      appName: "App 13",
+      appLogo: "https://via.placeholder.com/40",
+    },
   ];
 
   const addTab = (item) => {
@@ -86,58 +96,44 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
   };
 
   return (
-    <ul className="hidden lg:flex justify-start flex-nowrap overflow-x-scroll gap-2 removeScroll" >
-      {appLists.length > 10
-        ? appLists.slice(0, 9).map((item, index) => (
-            <div
-              className="hover:cursor-pointer"
-              key={index}
-              onClick={() => addTab(item)}
+    <ul className="hidden md:flex lg:flex justify-start flex-nowrap overflow-x-scroll gap-1 removeScroll">
+      {/* <Swiper
+        navigation={true}
+        spaceBetween={1}
+        slidesPerView={8}
+        modules={[Navigation]}
+      > */}
+      {appLists.map((item, index) => (
+        <>
+          {/* <SwiperSlide className=""> */}
+          <div
+            className="hover:cursor-pointer"
+            key={index}
+            onClick={() => addTab(item)}
+          >
+            <li
+              className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
+                appTabs.find((tab) => tab.id === item.id)
+                  ? "border-appListColor-400"
+                  : "border-gray-400"
+              }`}
             >
-              <li
-                className={`flex justify-start gap-1 items-center  border-2 rounded-full w-28 ${
-                  appTabs.find((tab)=>tab.id===item.id)
-                    ? "border-appListColor-400"
-                    : "border-gray-400"
-                }`}
-              >
-                <img
-                  src={item.appLogo}
-                  alt="app name"
-                  className="w-8 h-8 rounded-full"
-                />
-                <span className="text-black hover:text-gray-300">
-                  {item.appName}
-                </span>
-              </li>
-            </div>
-          ))
-        : appLists.map((item, index) => (
-            <div
-              className="hover:cursor-pointer"
-              key={index}
-              onClick={() => addTab(item)}
-            >
-              <li
-                className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 ${
-                  appTabs.find((tab)=>tab.id===item.id)
-                    ? "border-appListColor-400"
-                    : "border-gray-400"
-                }`}
-              >
-                <img
-                  src={item.appLogo}
-                  alt="app name"
-                  className="w-8 h-8 rounded-full"
-                />
-                <span className="text-black hover:text-gray-300">
-                  {item.appName}
-                </span>
-              </li>
-            </div>
-          ))}
+              <img
+                src={item.appLogo}
+                alt="app name"
+                className="w-8 h-8 rounded-full"
+              />
+              <span className="text-black hover:text-gray-300">
+                {item.appName}
+              </span>
+            </li>
+          </div>
+          {/* </SwiperSlide> */}
+        </>
+      ))}
+      {/* </Swiper> */}
 
-      {appLists.length > 10 ? (
+      {/* {appLists.length > 10 ? (
         <div>
           <li
             className={`flex justify-start gap-1 items-center border-2  rounded-full w-28 border-gray-400`}
@@ -147,14 +143,17 @@ const NavbarAppList = ({ setAppTabs, appTabs }) => {
               alt="app name"
               className="w-8 h-8 rounded-full "
             />
-            <a href="/" className="text-black hover:text-gray-300 whitespace-nowrap">
+            <a
+              href="/"
+              className="text-black hover:text-gray-300 whitespace-nowrap"
+            >
               view all
             </a>
           </li>
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </ul>
   );
 };

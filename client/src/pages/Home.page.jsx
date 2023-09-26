@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 // Layout
 import HomeLayout from "../layouts/Homepage.layout";
@@ -10,36 +10,36 @@ const Home = () => {
   const user = {
     name: "DemoUser",
     email: "demo@gmail.com",
-    role: "Admin",
+    role: "admin",
     token: "fuifweghfuigsaedfjkhfghui",
   };
 
   const tempTab = [
-    {
-      id:1,
-      appName: "App 1",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      id:2,
-      appName: "App 2",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      id:3,
-      appName: "App 3",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    }
-  ]
-  const [appTabs, setAppTabs] = useState(tempTab) 
+    // {
+    //   id: 1,
+    //   appName: "App 1",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
+    // {
+    //   id: 2,
+    //   appName: "App 2",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
+    // {
+    //   id: 3,
+    //   appName: "App 3",
+    //   appLogo: "https://via.placeholder.com/40",
+    //   active: true,
+    // },
+  ];
+  const [appTabs, setAppTabs] = useState(tempTab);
   return (
     <>
       {user?.token ? (
         <>
-          <Navbar setAppTabs={setAppTabs} appTabs={appTabs}/>
+          <Navbar setAppTabs={setAppTabs} appTabs={appTabs} />
           <AppDashboard setAppTabs={setAppTabs} appTabs={appTabs} />
         </>
       ) : (
