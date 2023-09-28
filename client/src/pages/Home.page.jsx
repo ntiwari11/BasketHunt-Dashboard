@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 
 // Layout
 import HomeLayout from "../layouts/Homepage.layout";
-import Dasboard from "../components/DashboardContainer/Dasboard";
 import Navbar from "../components/DashboardContainer/Navbar/Navbar";
 import AppDashboard from "../components/DashboardContainer/AppDashboard";
+import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ setAppTabs, appTabs }) => {
+  const navigate = useNavigate();
   const user = {
     name: "DemoUser",
     email: "demo@gmail.com",
@@ -14,27 +15,24 @@ const Home = () => {
     token: "fuifweghfuigsaedfjkhfghui",
   };
 
-  const tempTab = [
-    {
-      id: 1,
-      appName: "App 1",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      id: 2,
-      appName: "App 2",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-    {
-      id: 3,
-      appName: "App 3",
-      appLogo: "https://via.placeholder.com/40",
-      active: true,
-    },
-  ];
-  const [appTabs, setAppTabs] = useState(tempTab);
+  // const tempTab = [
+  //   {
+  //     id: 1,
+  //     appName: "App 1",
+  //     appLogo: "https://via.placeholder.com/40",
+  //   },
+  //   {
+  //     id: 2,
+  //     appName: "App 2",
+  //     appLogo: "https://via.placeholder.com/40",
+  //   },
+  //   {
+  //     id: 3,
+  //     appName: "App 3",
+  //     appLogo: "https://via.placeholder.com/40",
+  //   },
+  // ];
+  // const [appTabs, setAppTabs] = useState(tempTab);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const updateWindowDimensions = () => {
@@ -49,6 +47,12 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (appTabs.length === 0) {
+      navigate("/dashboard");
+    }
+  }, [appTabs]);
+
   return (
     <>
       {user?.token ? (
@@ -58,6 +62,7 @@ const Home = () => {
             appTabs={appTabs}
             windowWidth={windowWidth}
           />
+
           <AppDashboard
             setAppTabs={setAppTabs}
             appTabs={appTabs}

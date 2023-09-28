@@ -8,14 +8,37 @@ import UserLogin from "./components/LoginComponent/UserLogin";
 import Dasboard from "./components/DashboardContainer/Dasboard";
 import Login from "./components/LoginComponent/Login";
 import { register } from "swiper/element/bundle";
+import { useEffect, useState } from "react";
 register();
 
 function App() {
+  const tempTab = [];
+  const [appTabs, setAppTabs] = useState(tempTab);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/appdashboard" element={<Home />} />
-      <Route path="/dashboard" element={<Dasboard />} />
+      <Route
+        path="/appdashboard"
+        element={
+          <Home
+            setAppTabs={setAppTabs}
+            appTabs={appTabs}
+            windowWidth={windowWidth}
+          />
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <Dasboard
+            setAppTabs={setAppTabs}
+            appTabs={appTabs}
+            windowWidth={windowWidth}
+          />
+        }
+      />
       <Route path="/login" element={<Login />} />
 
       <Route path="/adminlogin" element={<AdminLogin />} />

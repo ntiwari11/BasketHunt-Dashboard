@@ -1,9 +1,9 @@
 import React from "react";
-import DashboardNavbar from "./Navbar/DashboardNavbar";
+// import DashboardNavbar from "./Navbar/DashboardNavbar";
 import DashboardSearchBar from "./DashboardSearchBar";
 import DashboardCards from "./DashboardCards";
 import Navbar from "./Navbar/Navbar";
-const Dasboard = () => {
+const Dasboard = ({ setAppTabs, appTabs, windowWidth }) => {
   return (
     <>
       {/* <div>dasboard</div> */}
@@ -11,7 +11,11 @@ const Dasboard = () => {
         {/* <DashboardNavbar /> */}
         <Navbar />
         <DashboardSearchBar />
-        <DashboardCards />
+        <DashboardCards
+          setAppTabs={setAppTabs}
+          appTabs={appTabs}
+          windowWidth={windowWidth}
+        />
       </div>
     </>
   );

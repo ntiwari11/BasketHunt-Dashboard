@@ -10,11 +10,20 @@ import { useLocation } from "react-router-dom";
 const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const location = useLocation();
+  console.log(location);
+  console.log(location === "/dashboard");
   return (
     <nav className="bg-white-500 border-b-4 border-navbarbottomline-200 p-4 ">
       {/* hamburger */}
 
-      <div className=" flex justify-between items-center ">
+      <div
+        className={` flex  items-center 
+          ${
+            location.pathname === "/dashboard"
+              ? "justify-end"
+              : "justify-between"
+          }`}
+      >
         {/*Logo   */}
         {/* <NavbarLogo /> */}
         {/* Menu List */}
@@ -22,7 +31,10 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
 
         <div
           onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
-          className="md:hidden cursor-pointer "
+          // className="md:hidden cursor-pointer "
+          className={`md:hidden cursor-pointer ${
+            location.pathname === "/dashboard" ? "hidden" : ""
+          }`}
         >
           {isHamburgerOpen ? (
             <RxCross2 size={40} />
