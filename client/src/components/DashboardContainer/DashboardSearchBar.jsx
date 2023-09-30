@@ -13,17 +13,17 @@ const DashboardSearchBar = ({ onSearch }) => {
   return (
     <>
       <div className="body_top">
-        <h1>Welcome Vishal</h1>
+        <p className="body_p">Welcome Vishal!</p>
         <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for apps "
-            value={query}
-            onChange={handleInputChange}
-          />
-          <button className="searchButton" onClick={handleSearch}>
-            Search
-          </button>
+          <div class="input-container">
+            <img class="imgs" src="./search.png" alt="img" />
+            <input
+              type="text"
+              placeholder="Search for apps"
+              value={query}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
       </div>
     </>

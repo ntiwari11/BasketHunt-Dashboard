@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styles/DashboardCards.css";
 import { useNavigate } from "react-router-dom";
+import { FaCircle } from "react-icons/fa";
 const DashboardCards = ({ setAppTabs, appTabs, windowWidth }) => {
   const navigate = useNavigate();
   const cardsData = [
@@ -106,10 +107,13 @@ const DashboardCards = ({ setAppTabs, appTabs, windowWidth }) => {
             className="card cursor-pointer"
             key={card.id}
           >
+            {/* <img className="imgc" src={card.image} alt="img" /> */}
+            <FaCircle className="imgc" color="#e5e7eb" />
             <h2>{card.appName}</h2>
             {/* <p>{card.content}</p> */}
           </div>
         ))}
+        <img className="img" src="./circle image.png" alt="img" />
       </div>
     </div>
   );
