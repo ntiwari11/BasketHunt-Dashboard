@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Styles/DashboardSearchBar.css";
-const DashboardSearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
+const DashboardSearchBar = ({ onSearch, query, setQuery }) => {
+  // const [query, setQuery] = useState("");
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
