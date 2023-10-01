@@ -8,7 +8,7 @@ import UserLogin from "./components/LoginComponent/UserLogin";
 import Dasboard from "./components/DashboardContainer/Dasboard";
 import Login from "./components/LoginComponent/Login";
 import { register } from "swiper/element/bundle";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 register();
 
 function App() {
