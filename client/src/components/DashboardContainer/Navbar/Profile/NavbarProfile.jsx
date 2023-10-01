@@ -7,9 +7,15 @@ const NavbarProfile = () => {
   const user = {
     name: "DemoUser",
     email: "demo@gmail.com",
-    role: "user",
+    role: "admin",
     token: "fuifweghfuigsaedfjkhfghui",
   };
+  // const user = {
+  //   name: "DemoUser",
+  //   email: "demo@gmail.com",
+  //   role: "user",
+  //   token: "fuifweghfuigsaedfjkhfghui",
+  // };
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
