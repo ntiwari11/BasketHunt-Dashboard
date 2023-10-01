@@ -2,7 +2,7 @@ import React from "react";
 // Import Swiper React components
 // import { Swiper, SwiperSlide } from "swiper/react";
 
-const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
+const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists,cssClasses,setIsHamburgerOpen }) => {
   // const appLists = [
   //   {
   //     id: 1,
@@ -91,7 +91,7 @@ const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
   };
 
   return (
-    <ul className="hidden md:flex lg:flex justify-start flex-nowrap overflow-x-scroll gap-1 removeScroll">
+    <ul className={`${cssClasses} lg:flex overflow-x-scroll gap-1 removeScroll`}>
       {/* <Swiper
         navigation={true}
         spaceBetween={1}
@@ -104,7 +104,7 @@ const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
           <div
             className="hover:cursor-pointer"
             key={index}
-            onClick={() => addTab(item)}
+            onClick={() => { setIsHamburgerOpen(false);addTab(item) }}
           >
             <li
               className={`flex justify-start gap-1 items-center border-2 rounded-full w-60 ${

@@ -43,15 +43,24 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
           )}
         </div>
         {isHamburgerOpen && (
-          <div className=" absolute shadow-lg py-3 top-20 left-0 w-full z-20 flex flex-col gap-2 bg-white border border-gray-200">
+          <div className=" absolute md:hidden lg:hidden xl:hidden m-auto shadow-lg py-3 top-20 left-0 w-full z-20 flex flex-col gap-2 bg-white border border-gray-200">
             {/* <NavbarAppList /> */}
-            <p>App List will render here</p>
+            <NavbarAppList
+              cssClasses="flex flex-wrap mx-8 justify-evenly gap-2 overflow-scroll"
+              setIsHamburgerOpen={setIsHamburgerOpen}
+              setAppTabs={setAppTabs}
+              appTabs={appTabs}
+              windowWidth={windowWidth}
+              appLists={cardsData}
+              />
           </div>
         )}
         {location.pathname === "/dashboard" ? (
           ""
         ) : (
-          <NavbarAppList
+            <NavbarAppList
+            cssClasses="hidden md:flex justify-start flex-nowrap"
+            setIsHamburgerOpen={setIsHamburgerOpen}
             setAppTabs={setAppTabs}
             appTabs={appTabs}
             windowWidth={windowWidth}
