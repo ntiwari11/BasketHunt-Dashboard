@@ -1,6 +1,13 @@
 import React from "react";
 
-const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
+const NavbarAppList = ({
+  setAppTabs,
+  appTabs,
+  windowWidth,
+  appLists,
+  cssClasses,
+  setIsHamburgerOpen,
+}) => {
   const addTab = (item) => {
     setAppTabs((prev) => {
       const presentData = prev.find((data) => data.id === item.id);
@@ -21,13 +28,18 @@ const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
   };
 
   return (
-    <ul className="hidden md:flex lg:flex justify-start flex-nowrap overflow-x-scroll gap-1 removeScroll">
+    <ul
+      className={`${cssClasses} lg:flex overflow-x-scroll gap-1 removeScroll`}
+    >
       {appLists.map((item, index) => (
         <>
           <div
             className="hover:cursor-pointer"
             key={index}
-            onClick={() => addTab(item)}
+            onClick={() => {
+              setIsHamburgerOpen(false);
+              addTab(item);
+            }}
           >
             <li
               className={`flex justify-start gap-1 items-center border-2 rounded-full w-60 ${
