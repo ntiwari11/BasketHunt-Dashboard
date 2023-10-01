@@ -6,7 +6,7 @@ import Navbar from "../components/DashboardContainer/Navbar/Navbar";
 import AppDashboard from "../components/DashboardContainer/AppDashboard";
 import { useNavigate } from "react-router-dom";
 
-const Home = ({ setAppTabs, appTabs }) => {
+const Home = ({ setAppTabs, appTabs, cardsData }) => {
   const navigate = useNavigate();
   const user = {
     name: "DemoUser",
@@ -61,6 +61,7 @@ const Home = ({ setAppTabs, appTabs }) => {
             setAppTabs={setAppTabs}
             appTabs={appTabs}
             windowWidth={windowWidth}
+            cardsData={cardsData}
           />
 
           <AppDashboard

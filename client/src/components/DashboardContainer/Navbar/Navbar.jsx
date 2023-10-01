@@ -7,12 +7,11 @@ import { RxCross2 } from "react-icons/rx";
 
 import { useLocation } from "react-router-dom";
 
-const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
+const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const location = useLocation();
   // console.log(location);
   // console.log(location === "/dashboard");
-  
   return (
     <nav className="bg-white-500 border-b-4 border-navbarbottomline-200 p-4 ">
       {/* hamburger */}
@@ -64,6 +63,7 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
             setAppTabs={setAppTabs}
             appTabs={appTabs}
             windowWidth={windowWidth}
+            appLists={cardsData}
           />
         )}
         {/* Profile */}
