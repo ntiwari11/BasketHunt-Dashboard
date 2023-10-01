@@ -2,7 +2,7 @@ import React from "react";
 // Import Swiper React components
 // import { Swiper, SwiperSlide } from "swiper/react";
 
-const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists }) => {
+const NavbarAppList = ({ setAppTabs, appTabs, windowWidth, appLists,cssClasses,setIsHamburgerOpen }) => {
   // const appLists = [
   //   {
   //     id: 1,

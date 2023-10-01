@@ -51,6 +51,7 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
               setAppTabs={setAppTabs}
               appTabs={appTabs}
               windowWidth={windowWidth}
+              appLists={cardsData}
               />
           </div>
         )}
