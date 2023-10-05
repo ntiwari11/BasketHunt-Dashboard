@@ -23,13 +23,13 @@ app.get("/", (req, res) => {
 app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/user", userRoutes);
 
-const PORT = 4000;
+//const PORT = 4000;
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT|| 4000, () => {
   connectDb()
     .then(() => {
       console.log(
-        `Server is Running on http://localhost:${PORT}\nDatabase Connected Successfully.....`
+        `Server is Running on http://localhost:${process.env.PORT}\nDatabase Connected Successfully.....`
       );
     })
     .catch((error) => {

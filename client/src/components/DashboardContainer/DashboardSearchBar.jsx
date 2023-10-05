@@ -15,8 +15,8 @@ const DashboardSearchBar = ({ onSearch, query, setQuery }) => {
       <div className="body_top">
         <p className="body_p">Welcome Vishal!</p>
         <div className="search-bar">
-          <div class="input-container">
-            <img class="imgs" src="./search.png" alt="img" />
+          <div className="input-container">
+            <img className="imgs" src="./search.png" alt="img" />
             <input
               type="text"
               placeholder="Search for apps"
