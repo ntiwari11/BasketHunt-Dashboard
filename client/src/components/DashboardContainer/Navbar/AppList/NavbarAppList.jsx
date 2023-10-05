@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch,useSelector } from "react-redux";
+import {addMessage} from "../../../../reduxToolkit/tempAction"
 
 const NavbarAppList = ({
   setAppTabs,
@@ -8,6 +10,8 @@ const NavbarAppList = ({
   cssClasses,
   setIsHamburgerOpen,
 }) => {
+  const dispatch = useDispatch();
+  const data = useSelector(state => state.tempData);
   const addTab = (item) => {
     setAppTabs((prev) => {
       const presentData = prev.find((data) => data.id === item.id);
@@ -25,6 +29,10 @@ const NavbarAppList = ({
       }
       return prev;
     });
+
+    //dispatch(addMessage(item.id))  //store some data in redux store
+    //console.log(data)  //these two line use to check redux-toolkit is properly work or not
+
   };
 
   return (

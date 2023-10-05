@@ -1,11 +1,18 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {removeMessage} from "../../reduxToolkit/tempAction"
+
+
 import "./Styles/AppDashboard.css";
 const AppDashboard = ({ setAppTabs, appTabs, windowWidth }) => {
+  const dispatch = useDispatch();
 
   const removeTab = (tabValue) => {
     setAppTabs((prev) => {
       return prev.filter((item) => item.id !== tabValue);
     });
+
+    //dispatch(removeMessage(tabValue))  //these line use to check redux-toolkit is properly work or not
   };
 
   useEffect(() => {
