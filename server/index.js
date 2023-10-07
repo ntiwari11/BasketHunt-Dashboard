@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
-// Databse connection import
+// Database connection import
 import connectDb from "./database/connection";
 // importing routes
 import userRoutes from "./routes/user/userRoutes";
@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    messaga: "Welcome To The BasketHunt Chat app Server",
+    message: "Welcome To The BasketHunt Chat app Server",
   });
 });
 app.use("/api/v1/admin", adminRoutes);

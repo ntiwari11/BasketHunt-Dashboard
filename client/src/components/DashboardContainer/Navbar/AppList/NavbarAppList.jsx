@@ -1,17 +1,15 @@
 import React from "react";
-import { useDispatch,useSelector } from "react-redux";
-import {addMessage} from "../../../../reduxToolkit/tempAction"
-
+import { useSelector } from 'react-redux';
 const NavbarAppList = ({
   setAppTabs,
   appTabs,
   windowWidth,
-  appLists,
   cssClasses,
   setIsHamburgerOpen,
 }) => {
-  const dispatch = useDispatch();
-  const data = useSelector(state => state.tempData);
+
+  const appLists = useSelector((state) => state.cardListReducer.cards?.cardsData)
+
   const addTab = (item) => {
     setAppTabs((prev) => {
       const presentData = prev.find((data) => data.id === item.id);

@@ -10,7 +10,7 @@ exports.userLogin = (req, res) => {
   const { password } = req.body;
 
   res.status(201).json({
-    succes: true,
+    success: true,
     message: "Ask about this route with sir ",
   });
 };

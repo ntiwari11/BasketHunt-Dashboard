@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useSelector} from "react-redux"
 
 // Layout
 import HomeLayout from "../layouts/Homepage.layout";
@@ -6,14 +7,9 @@ import Navbar from "../components/DashboardContainer/Navbar/Navbar";
 import AppDashboard from "../components/DashboardContainer/AppDashboard";
 import { useNavigate } from "react-router-dom";
 
-const Home = ({ setAppTabs, appTabs, cardsData }) => {
+const Home = ({ setAppTabs, appTabs}) => {
   const navigate = useNavigate();
-  const user = {
-    name: "DemoUser",
-    email: "demo@gmail.com",
-    role: "admin",
-    token: "fuifweghfuigsaedfjkhfghui",
-  };
+  const user=useSelector((state)=>state.authReducer.authData?.user)
 
   // const tempTab = [
   //   {
@@ -61,7 +57,6 @@ const Home = ({ setAppTabs, appTabs, cardsData }) => {
             setAppTabs={setAppTabs}
             appTabs={appTabs}
             windowWidth={windowWidth}
-            cardsData={cardsData}
           />
 
           <AppDashboard
