@@ -4,18 +4,18 @@ import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 const NavbarProfile = () => {
-  const user = {
-    name: "DemoUser",
-    email: "demo@gmail.com",
-    role: "admin",
-    token: "fuifweghfuigsaedfjkhfghui",
-  };
   // const user = {
   //   name: "DemoUser",
   //   email: "demo@gmail.com",
-  //   role: "user",
+  //   role: "admin",
   //   token: "fuifweghfuigsaedfjkhfghui",
   // };
+  const user = {
+    name: "DemoUser",
+    email: "demo@gmail.com",
+    role: "user",
+    token: "fuifweghfuigsaedfjkhfghui",
+  };
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
