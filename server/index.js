@@ -7,7 +7,7 @@ import connectDb from "./database/connection";
 // importing routes
 import userRoutes from "./routes/user/userRoutes";
 import adminRoutes from "./routes/admin/adminRoutes";
-
+import dashboardRoutes from "./routes/admin/dashboardRoutes";
 const app = express();
 dotenv.config();
 app.use(express.json());
@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/dashboard", dashboardRoutes);
 
 const PORT = 4000;
 
