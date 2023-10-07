@@ -18,7 +18,6 @@ const Dasboard = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
           windowWidth={windowWidth}
           query={query}
           setQuery={setQuery}
-          cardsData={cardsData}
         />
       </div>
     </>

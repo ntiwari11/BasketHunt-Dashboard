@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import { useLocation } from "react-router-dom";
 
-const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
+const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const location = useLocation();
   // console.log(location);
@@ -51,7 +51,6 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
               setAppTabs={setAppTabs}
               appTabs={appTabs}
               windowWidth={windowWidth}
-              appLists={cardsData}
               />
           </div>
         )}
@@ -64,7 +63,6 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth, cardsData }) => {
             setAppTabs={setAppTabs}
             appTabs={appTabs}
             windowWidth={windowWidth}
-            appLists={cardsData}
           />
         )}
         {/* Profile */}
