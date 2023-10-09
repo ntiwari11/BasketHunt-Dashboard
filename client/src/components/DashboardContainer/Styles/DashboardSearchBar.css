@@ -1,5 +1,4 @@
-
-
+/* Default styles for larger screens */
 .body_top {
   display: flex;
   align-items: center;
@@ -8,6 +7,7 @@
   padding-top: 2.4rem;
   padding-bottom: 1.2rem;
 }
+
 .search-bar {
   display: flex;
   padding-top: 1.3rem;
@@ -24,11 +24,12 @@ input {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.body_p{
+.body_p {
   font-size: 38px;
   font-weight: 400;
   color: #000000;
 }
+
 .input-container {
   display: inline-block;
   position: relative;
@@ -40,8 +41,28 @@ input {
 
 .input-container .imgs {
   position: absolute;
-  left: 10px; 
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px; 
+  width: 20px;
+}
+
+@media (max-width: 400px) {
+  .body_top {
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .search-bar {
+    padding-top: 0.8rem;
+  }
+
+  input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .body_p {
+    font-size: 24px;
+  }
 }
