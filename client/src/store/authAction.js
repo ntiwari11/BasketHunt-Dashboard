@@ -26,23 +26,8 @@ const initialState = {
 export const authSlice = createSlice({
   name: "authenticate",
   initialState,
-  reducers: {
-    // tempurariFunction: (state, action) => {
-    //     state.tempData.push({ id: nanoid(), message: action.payload })
-    // }
-  },
-  //asyncReducers
-  asyncReducers: (builder) => {
-    // // Add reducers for additional action types here, and handle loading state as needed
-    // builder.addCase(fetchUserById.fulfilled, (state, action) => {
-    //     // Add user to the state array
-    //     state.tempData.push(action.payload)
-    // })
-  },
+  reducers: {},
 });
 
 // export const {  } = authSlice.actions;
 export default authSlice.reducer;
-
-// Later, dispatch the thunk as needed in the app
-//dispatch(fetchUserById(123))
