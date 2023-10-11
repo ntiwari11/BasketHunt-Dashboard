@@ -4,7 +4,10 @@ html {
 
 .body-middle {
   margin-top: 0.875rem;
-  padding: 5rem 7.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card-grid {
@@ -51,4 +54,61 @@ html {
 .imgc {
   height: 5rem;
   width: 5rem;
+}
+
+@media (max-width: 1250px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .body-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .body_top {
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .body-middle {
+    margin-top: 0.875rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .search-bar {
+    padding-top: 0.8rem;
+  }
+
+  input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .body_p {
+    font-size: 24px;
+  }
 }

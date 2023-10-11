@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 const NavbarProfile = () => {
   // const user = {
@@ -10,12 +11,13 @@ const NavbarProfile = () => {
   //   role: "admin",
   //   token: "fuifweghfuigsaedfjkhfghui",
   // };
-  const user = {
-    name: "DemoUser",
-    email: "demo@gmail.com",
-    role: "user",
-    token: "fuifweghfuigsaedfjkhfghui",
-  };
+  // const user = {
+  //   name: "DemoUser",
+  //   email: "demo@gmail.com",
+  //   role: "user",
+  //   token: "fuifweghfuigsaedfjkhfghui",
+  // };
+  const { user } = useSelector((state) => state.authReducer.authData);
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
