@@ -9,6 +9,7 @@ import userRoutes from "./routes/user/userRoutes";
 import adminRoutes from "./routes/admin/adminRoutes";
 import dashboardRoutes from "./routes/admin/dashboardRoutes";
 import chatRoutes from "./routes/chat/chatRoute"
+import messageRoutes from "./routes/message/messageRoutes"
 const app = express();
 dotenv.config();
 app.use(express.json());
@@ -24,7 +25,8 @@ app.get("/", (req, res) => {
 app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
-app.use("/api/v1/chat",chatRoutes);
+app.use("/api/v1/chat", chatRoutes);
+app.use("/api/v1/message", messageRoutes);
 
 //const PORT = 4000;
 
