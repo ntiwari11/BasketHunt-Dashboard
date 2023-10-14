@@ -6,6 +6,11 @@ const userSchema = mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, selected: false },
+    pic: {
+      type: String,
+      default:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/341/small_2x/man-wearing-sunglasses-avatar-character-isolated-icon-free-vector.jpg",
+    },
     role: {
       type: String,
       default: "admin",

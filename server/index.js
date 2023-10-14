@@ -8,8 +8,8 @@ import connectDb from "./database/connection";
 import userRoutes from "./routes/user/userRoutes";
 import adminRoutes from "./routes/admin/adminRoutes";
 import dashboardRoutes from "./routes/admin/dashboardRoutes";
-import chatRoutes from "./routes/chat/chatRoute"
-import messageRoutes from "./routes/message/messageRoutes"
+import chatRoutes from "./routes/chatApplication/chatRoute";
+import messageRoutes from "./routes/chatApplication/messageRoutes";
 const app = express();
 dotenv.config();
 app.use(express.json());
@@ -22,15 +22,19 @@ app.get("/", (req, res) => {
     message: "Welcome To The BasketHunt Chat app Server",
   });
 });
+
+// Dashboard Routes
 app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
+
+// chat Application routes
 app.use("/api/v1/chat", chatRoutes);
 app.use("/api/v1/message", messageRoutes);
 
 //const PORT = 4000;
 
-app.listen(process.env.PORT|| 4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   connectDb()
     .then(() => {
       console.log(
