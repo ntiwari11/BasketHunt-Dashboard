@@ -4,11 +4,13 @@ import NavbarProfile from "./Profile/NavbarProfile";
 import NavbarAppList from "./AppList/NavbarAppList";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import NavbarLogo from "./Logo/NavbarLogo";
 
 import { useLocation } from "react-router-dom";
 
 const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
   const location = useLocation();
   // console.log(location);
   // console.log(location === "/dashboard");
@@ -20,12 +22,13 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
         className={` flex  items-center 
           ${
             location.pathname === "/dashboard"
-              ? "justify-end"
+              ? "justify-between"
               : "justify-between"
           }`}
       >
         {/*Logo   */}
         {/* <NavbarLogo /> */}
+
         {/* Menu List */}
         {/* <NavbarAppList /> */}
 
@@ -46,18 +49,18 @@ const Navbar = ({ setAppTabs, appTabs, windowWidth }) => {
           <div className=" absolute md:hidden lg:hidden xl:hidden m-auto shadow-lg py-3 top-20 left-0 w-full z-20 flex flex-col gap-2 bg-white border border-gray-200">
             {/* <NavbarAppList /> */}
             <NavbarAppList
-              cssClasses="flex flex-wrap mx-8 justify-evenly gap-2 overflow-scroll"
+              cssClasses="flex  mx-8 justify-evenly gap-2 overflow-scroll"
               setIsHamburgerOpen={setIsHamburgerOpen}
               setAppTabs={setAppTabs}
               appTabs={appTabs}
               windowWidth={windowWidth}
-              />
+            />
           </div>
         )}
         {location.pathname === "/dashboard" ? (
-          ""
+          <img className="w-24" src="./baskethuntLogo.jpg" alt="Logo" />
         ) : (
-            <NavbarAppList
+          <NavbarAppList
             cssClasses="hidden md:flex justify-start flex-nowrap"
             setIsHamburgerOpen={setIsHamburgerOpen}
             setAppTabs={setAppTabs}

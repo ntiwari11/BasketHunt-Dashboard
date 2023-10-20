@@ -17,13 +17,13 @@ html {
 }
 
 .card {
-  padding: 2.8125rem;
+  padding: 0.8125rem;
   border: 0.0625rem solid transparent;
   border-radius: 0.75rem;
-  border-color: #ff7a3d;
+  border-color: #d6cfcb;
   background-color: rgb(250, 250, 250);
-  width: 17.125rem;
-  height: 12.5rem;
+  width: 10.125rem;
+  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -77,6 +77,23 @@ html {
 
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+@media (max-width: 380px) {
+  .body-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card {

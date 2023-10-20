@@ -13,8 +13,10 @@ exports.adminRegister = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email || !password) {
-      res.status(400);
-      throw new Error("Please Enter all the Feilds");
+      res.status(400).json({
+        success: false,
+        message: "Please Enter all the fields",
+      });
     }
 
     const userExists = await User.findOne({ email });

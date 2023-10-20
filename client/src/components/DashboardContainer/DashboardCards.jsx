@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Styles/DashboardCards.css";
 import { useNavigate } from "react-router-dom";
-import { FaCircle } from "react-icons/fa";
+import { FaCircle, FaSquare } from "react-icons/fa";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Menu } from "@headlessui/react";
 import { useSelector, useDispatch } from "react-redux";
@@ -71,8 +71,9 @@ const DashboardCards = ({
               onClick={() => openApp(card)}
             >
               {/* <img className="imgc" src={card.image} alt="img" /> */}
-              <FaCircle className="imgc" color="#e5e7eb" />
-              <h2>{card.appName}</h2>
+              {/* <FaCircle className="imgc" color="#e5e7eb" /> */}
+              <FaSquare className="imgc" color="#e5e7eb" />
+              <h2 className="text-sm truncate">{card.appName}</h2>
             </div>
             {role === "admin" && <Dropdown componentId={card.id} />}
           </div>

@@ -7,6 +7,7 @@ import User from "../../Models/userModel.js";
  */
 exports.createChat = async (req, res) => {
   const { userId } = req.body;
+  // this case will never run
   if (!userId) {
     // console.log("UserId param not sent with request");
     return res.sendStatus(400);
@@ -44,8 +45,10 @@ exports.createChat = async (req, res) => {
         .populate("users", "-password");
       res.status(200).json(FullChat);
     } catch (error) {
-      res.status(400);
-      throw new Error(error.message);
+      res.status(400).json({
+        success: false,
+        message: error.message,
+      });
     }
   }
 };
@@ -57,9 +60,11 @@ exports.createChat = async (req, res) => {
 exports.deleteChat = async (req, res) => {
   try {
     const deleteCount = await chatModel.deleteOne({ _id: req.params.id });
-    res.status(200).json({ ...deleteCount, deleteChat: req.params.id });
+    res
+      .status(200)
+      .json({ success: true, ...deleteCount, deleteChat: req.params.id });
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ success: false, message: error });
   }
 };
 
@@ -81,10 +86,12 @@ exports.getAllChats = async (req, res) => {
           path: "latestMessage.sender",
           select: "name pic email",
         });
-        res.status(200).send(results);
+        res.status(200).json({ success: true, results });
       });
   } catch (error) {
-    res.status(400);
-    throw new Error(error.message);
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
   }
 };

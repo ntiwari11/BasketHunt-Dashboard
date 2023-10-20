@@ -16,7 +16,7 @@ const initialState = {
     user: {
       name: "demo",
       email: "d@gmail.com",
-      role: "user",
+      role: "admin",
       token: "fuifweghfuigsaedfjkhfghui",
     },
     error: false,

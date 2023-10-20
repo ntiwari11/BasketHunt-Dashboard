@@ -2,9 +2,9 @@ import React from "react";
 
 const NavbarLogo = () => {
   return (
-    <div className="min-w-[132px]">
-      {/* <img src="./Logo.png" alt="Logo" /> */}
-      <span>LOGO</span>
+    <div className="">
+      <img src="./baskethuntLogo.jpg" alt="Logo" />
+      {/* <span>LOGO</span> */}
     </div>
   );
 };

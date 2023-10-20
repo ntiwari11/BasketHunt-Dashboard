@@ -1,25 +1,14 @@
 import React, { useState } from "react";
-
+import { useNavigation } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { useSelector } from "react-redux";
 
 const NavbarProfile = () => {
-  // const user = {
-  //   name: "DemoUser",
-  //   email: "demo@gmail.com",
-  //   role: "admin",
-  //   token: "fuifweghfuigsaedfjkhfghui",
-  // };
-  // const user = {
-  //   name: "DemoUser",
-  //   email: "demo@gmail.com",
-  //   role: "user",
-  //   token: "fuifweghfuigsaedfjkhfghui",
-  // };
   const { user } = useSelector((state) => state.authReducer.authData);
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  // const navigate = useNavigation();
 
   const adminProfileOptions = [
     {
@@ -64,6 +53,17 @@ const NavbarProfile = () => {
   const profileOptions =
     user.role === "admin" ? adminProfileOptions : userProfileOptions;
 
+  const functionSignOut = () => {
+    // navigate("/");
+  };
+  const optionFunction = (index) => {
+    if (
+      (index === 3 && user.role === "user") ||
+      (index === 5 && user.role === "admin")
+    ) {
+      functionSignOut();
+    }
+  };
   return (
     <>
       {/* profile  */}
@@ -74,7 +74,7 @@ const NavbarProfile = () => {
         <span className="mr-2">
           <CgProfile size={30} />
         </span>
-        <span className="mr-2 text-lg">{user.name}</span>
+        {/* <span className="mr-2 text-lg">{user.name}</span> */}
         <span>
           {isProfileOpen ? (
             <IoMdArrowDropup size={30} />
@@ -92,7 +92,9 @@ const NavbarProfile = () => {
                   className=" ml-7 flex justify-start items-center gap-1"
                 >
                   {/* <span></span> */}
-                  <span>{items.optionName} </span>
+                  <span onClick={optionFunction(index)}>
+                    {items.optionName}{" "}
+                  </span>
                 </button>
               </>
             ))}
