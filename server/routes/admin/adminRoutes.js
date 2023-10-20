@@ -27,7 +27,12 @@ router.get("/", adminWelcome);
  * @Access : Public
  * @Description : Admin user Registration
  */
-router.post("/register", adminRegister);
+router.post(
+  "/register",
+  isAuthenticatedUsers,
+  authorizeRolesAdmin("admin"),
+  adminRegister
+);
 
 /**
  * @Route : http://localhost:4000/api/v1/admin/login
